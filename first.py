@@ -1,4 +1,9 @@
-with open("unix.mailbox") as f:
+import sys
+if len(sys.argv) < 2:
+    print("./first <file name>")
+    exit(1)
+
+with open(sys.argv[1]) as f:
     files = {}
     sender = None
     for line in f:
