@@ -3,10 +3,10 @@
 В tests/ лежат тесты на поддержку unicode
 
 ## Производительность
-тестовые данные: файл размером 3GB
+Тестовые данные: файл размером 3GB
 
 `$ python test_gen.py 100 100 300`
-#### время работы при чтении с SSD(среднее по трём запускам):
+#### Время работы при чтении с SSD (среднее по трём запускам):
 ```
 $ time python first.py maxtest.mailbox 
 real	0m12.147s
@@ -20,12 +20,12 @@ user	0m4.128s
 sys	    0m4.536s
 ```
 ```
-$ time ./a.out maxtest.mailbox 
+$ time ./fast.out maxtest.mailbox 
 real	0m9.316s
 user	0m1.148s
 sys	    0m3.864s
 ```
-#### время работы при чтении с RAM-диска(среднее по трём запускам):
+#### Время работы при чтении с RAM-диска (среднее по трём запускам):
 ```
 $ time python first.py maxtest.mailbox 
 real	0m13.435s
