@@ -8,13 +8,13 @@
 `$ python test_gen.py 100 100 300`
 #### Время работы при чтении с SSD (среднее по трём запускам):
 ```
-$ time python first.py maxtest.mailbox 
+$ time python kirill_timofeev.py maxtest.mailbox 
 real	0m12.147s
 user	0m5.388s
 sys	    0m5.956s
 ```
 ```
-$ time pypy first.py maxtest.mailbox 
+$ time pypy kirill_timofeev.py maxtest.mailbox 
 real	0m10.499s
 user	0m4.128s
 sys	    0m4.536s
@@ -27,13 +27,13 @@ sys	    0m3.864s
 ```
 #### Время работы при чтении с RAM-диска (среднее по трём запускам):
 ```
-$ time python first.py maxtest.mailbox 
+$ time python kirill_timofeev.py maxtest.mailbox 
 real	0m13.435s
 user	0m8.596s
 sys	    0m4.844s
 ```
 ```
-$ time pypy first.py maxtest.mailbox 
+$ time pypy kirill_timofeev.py maxtest.mailbox 
 real	0m11.636s
 user	0m7.612s
 sys	    0m4.024s
