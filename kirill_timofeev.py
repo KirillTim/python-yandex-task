@@ -4,7 +4,7 @@ import sys
 
 def main():
     if len(sys.argv) < 2:
-        print("./first <file name>")
+        print(sys.argv[0]+" <file name>")
         exit(1)
 
     with open(sys.argv[1], "rb") as input:

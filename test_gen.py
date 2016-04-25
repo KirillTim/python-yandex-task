@@ -16,7 +16,7 @@ def gen(senders_count, lines_per_mail, mails_per_sender):
 
 def main():
     if len(sys.argv) < 4:
-        print("test_gen.py <senders_count> <lines_per_mail> <mails_per_sender>")
+        print(sys.argv[0]+" <senders_count> <lines_per_mail> <mails_per_sender>")
         exit(1)
     else:
         gen(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
