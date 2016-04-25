@@ -22,5 +22,5 @@ def main():
         gen(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
