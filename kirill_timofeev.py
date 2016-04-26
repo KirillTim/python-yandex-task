@@ -2,6 +2,8 @@
 import sys
 
 READ_BUF_SIZE = 1024*1024  # in bytes
+# it's 2016, everybody should use utf-8
+# it works with other encodings though
 FROM_BYTES = str.encode("From ")
 
 
@@ -12,16 +14,14 @@ def main():
     # sometimes such a big read buffer can help
     # avoid python encoding troubles -- read bytes, not strings
     with open(sys.argv[1], "rb", buffering=READ_BUF_SIZE) as file:
-        # it's 2016, everybody should use utf-8
-        # it works with other encodings though
         files = {}
         sender = prev_sender = None
         buf = bytearray()
         for line in file:
             if line[:len(FROM_BYTES)] == FROM_BYTES:
-                sender = line.decode().split(' ')[1]
+                sender = line.split(b' ')[1]
                 if sender not in files:
-                    files[sender] = open(sender, "wb")
+                    files[sender] = open(sender.decode(), "wb")
             if sender:  # skip all lines before first mail header
                 if not prev_sender:
                     prev_sender = sender
