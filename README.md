@@ -4,10 +4,11 @@
 
 ## Производительность
 Производительность можно тестировать скриптом `tests/speedtest.sh`
+
 Тестовые данные: файл размером 2GB
 
 #### Время работы при чтении с SSD (среднее по трём запускам):
-`$ python test_gen.py 100 150 200 1000`
+- `$ python test_gen.py 100 150 200 1000`
 
 ```
 $ time python kirill_timofeev.py maxtest.mailbox 
@@ -27,7 +28,7 @@ real	0m4.828s
 user	0m0.572s
 sys	    0m1.780s
 ```
-`$ python test_gen.py 100 1000 2000 10`
+- `$ python test_gen.py 100 1000 2000 10`
 ```
 $ time python kirill_timofeev.py maxtest.mailbox 
 real	1m1.093s
