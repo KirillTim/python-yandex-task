@@ -1,8 +1,8 @@
 import sys
 
 
-def gen(senders_count, lines_per_mail, mails_per_sender):
-    line = [''.join([c] * 1000) for c in ["a", "b"]]
+def gen(senders_count, mails_per_sender, lines_per_mail, chars_per_line):
+    line = [''.join([c] * chars_per_line) for c in ["a", "b"]]
     with open("maxtest.mailbox", "w") as f:
         senders = ["sender" + str(x) + "@mail.com" for x in range(senders_count)]
         for i in range(mails_per_sender):
@@ -15,11 +15,11 @@ def gen(senders_count, lines_per_mail, mails_per_sender):
 
 
 def main():
-    if len(sys.argv) < 4:
-        print(sys.argv[0]+" <senders_count> <lines_per_mail> <mails_per_sender>")
+    if len(sys.argv) < 5:
+        print(sys.argv[0]+" <senders_count> <mails_per_sender> <lines_per_mail> <chars_per_line>")
         exit(1)
     else:
-        gen(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
+        gen(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
 
 
 if __name__ == "__main__":
