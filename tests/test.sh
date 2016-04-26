@@ -13,8 +13,8 @@ function check {
 }
 
 rm auth1@china.com auth2@japan.com auth3@arab.com result
-python3 ../first.py unicode.mailbox
+python3 ../kirill_timofeev.py unicode.mailbox
 check
 rm auth1@china.com auth2@japan.com auth3@arab.com result
-python3 ../first.py unicode.mailbox
+python3 ../kirill_timofeev.py unicode.mailbox
 check
