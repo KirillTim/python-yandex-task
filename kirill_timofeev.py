@@ -10,15 +10,24 @@ def main():
     with open(sys.argv[1], "rb") as input:
         from_bytes = str.encode("From ")
         files = {}
-        sender = None
+        sender = prev_sender = None
+        buf = bytearray()
         for line in input:
             if line[:5] == from_bytes:
                 sender = line.decode().split(' ')[1]
                 if sender not in files:
                     files[sender] = open(sender, "wb")
             if sender:
-                files[sender].write(line)
+                if not prev_sender:
+                    prev_sender = sender
+                elif sender != prev_sender:
+                    files[prev_sender].write(buf)
+                    prev_sender = sender
+                    buf = bytearray()
 
+                buf += line
+        if sender:
+            files[sender].write(buf)
         for f in files.values():
             f.close()
 
