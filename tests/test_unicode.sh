@@ -1,6 +1,7 @@
 #!/bin/bash
 function check {
     touch result
+    cat кто-то@почта.рф >> result
     cat auth1@china.com >> result 
     cat auth2@japan.com >> result
     cat auth3@arab.com >> result
