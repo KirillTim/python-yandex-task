@@ -1,46 +1,48 @@
 # Задание на вакансию стажёра-разработчика Python (Инфраструктура вертикальных сервисов)
 
-В tests/ лежат тесты на поддержку unicode
+Тесты лежат в tests/
 
 ## Производительность
-Тестовые данные: файл размером 3GB
+Производительность можно тестировать скриптом `tests/speedtest.sh`
+Тестовые данные: файл размером 2GB
 
-`$ python test_gen.py 100 100 300`
 #### Время работы при чтении с SSD (среднее по трём запускам):
+`$ python test_gen.py 100 150 200 1000`
+
 ```
 $ time python kirill_timofeev.py maxtest.mailbox 
-real	0m12.147s
-user	0m5.388s
-sys	    0m5.956s
+real	0m5.447s
+user	0m1.156s
+sys	    0m1.456s
 ```
 ```
 $ time pypy kirill_timofeev.py maxtest.mailbox 
-real	0m10.499s
-user	0m4.128s
-sys	    0m4.536s
+real	0m18.815s
+user	0m15.936s
+sys	    0m1.844s
 ```
 ```
 $ time ./fast.out maxtest.mailbox 
-real	0m9.316s
-user	0m1.148s
-sys	    0m3.864s
+real	0m4.828s
+user	0m0.572s
+sys	    0m1.780s
 ```
-#### Время работы при чтении с RAM-диска (среднее по трём запускам):
+`$ python test_gen.py 100 1000 2000 10`
 ```
 $ time python kirill_timofeev.py maxtest.mailbox 
-real	0m13.435s
-user	0m8.596s
-sys	    0m4.844s
+real	1m1.093s
+user	0m57.772s
+sys	    0m2.176s
 ```
 ```
 $ time pypy kirill_timofeev.py maxtest.mailbox 
-real	0m11.636s
-user	0m7.612s
-sys	    0m4.024s
+real	0m33.779s
+user	0m30.268s
+sys	    0m2.096s
 ```
 ```
 $ time ./fast.out maxtest.mailbox 
-real	0m5.913s
-user	0m1.648s
-sys	    0m4.256s
+real	0m29.887s
+user	0m25.812s
+sys	    0m2.024s
 ```
